@@ -31,7 +31,7 @@ print(selected_time, selected_date_time)
 for _ in range(36): # 5分毎 x 36 = 3時間分遡る
     # **ボタンをクリック**
     button.click()
-    time.sleep(1)
+    time.sleep(5)
     selected_time = driver.find_element("xpath", "/html/body/div[2]/div[1]/div[3]/div[1]/div/div[1]/div[2]/div/div[2]").text
     if selected_time.endswith(":00") or selected_time.endswith(":30"):
         selected_date_time = driver.find_element("xpath", "/html/body/div[2]/div[18]/div/div[4]/div[2]/div/div/table[1]/tr/td[2]").text
