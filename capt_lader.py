@@ -1,5 +1,6 @@
 import os
 import time
+import shutil
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -43,6 +44,8 @@ for _ in range(36): # 5分毎 x 36 = 3時間分遡る
         file_name = os.path.join(output_dir, f'{date_time_str}.png')
         print(f'save to {file_name}')
         driver.save_screenshot(file_name)
+
+shutil.make_archive("output", format='zip', root_dir=os.path.dirname(output_dir), base_dir=os.path.basename(output_dir))
 
 # 終了処理
 driver.quit()
